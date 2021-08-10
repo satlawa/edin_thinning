@@ -1,0 +1,2 @@
+train_loss, train_acc_all, train_acc_mean, train_jacc, train_dice, val_loss, val_acc_all, val_acc_mean, val_jacc, val_dice, 
+0.3662, 0.7804, 0.6309, 0.5055, 0.6375, 0.3548, 0.7640, 0.6652, 0.5199, 0.6573, 

@@ -1,0 +1,5 @@
+train_loss, train_acc_all, train_acc_mean, train_jacc, train_dice, val_loss, val_acc_all, val_acc_mean, val_jacc, val_dice, 
+train_loss, train_acc_all, train_acc_mean, train_jacc, train_dice, val_loss, val_acc_all, val_acc_mean, val_jacc, val_dice, 
+train_loss, train_acc_all, train_acc_mean, train_jacc, train_dice, val_loss, val_acc_all, val_acc_mean, val_jacc, val_dice, 
+0.2178, 0.8206, 0.7778, 0.6769, 0.7838, train_loss, train_acc_all, train_acc_mean, train_jacc, train_dice, val_loss, val_acc_all, val_acc_mean, val_jacc, val_dice, 
+0.2205, 0.8200, 0.7773, 0.6744, 0.7824, 0.2066, 0.8416, 0.7994, 0.6993, 0.8049, 
