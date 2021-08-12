@@ -93,9 +93,9 @@ indices of train, validation and test sets must be prepared as numpy arrays (.np
 the three folders contain the code for training and evaluation of the models.
 each of the folder has the same structure.
 
-deeplabv3plus - DeepLabv3+
-fcdensenet - FC-FCDenseNet
-unet - UNet
+- deeplabv3plus - DeepLabv3+ (DCNN impemented by: https://github.com/jfzhang95/pytorch-deeplab-xception)
+- fcdensenet - FC-FCDenseNet
+- unet - UNet
 
 - `datasets` - loading and preparing data for the DCNNs
 - `log` - for logging the progress of the training
