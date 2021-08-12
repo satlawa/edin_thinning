@@ -7,7 +7,7 @@ We apply deep convolutional neural networks for semantic sementation to detect t
 
 ###########################################################################
 
-# create_dataset
+## create_dataset
 data preperation and concatination into data set
 
 ## Create input data tiles
@@ -21,19 +21,19 @@ in particular the raster files are clipt into tiles defined by the vector file (
 in the case of dsm, dtm and slope the created files need to be aigned since they 
 have diffrent spatial resolutions.
 
-## Create ground truth tiles
+### Create ground truth tiles
 create_ground_truth.ipynb
 
 Created ground truth raster files (.tif) out of a vector file (.shp)
 
-### add ground truth types
+#### add ground truth types
 defines the ground truths for Base, UR12 and UR1 (see disertation).
 
 
-## Create data set
+### Create data set
 create_dataset_mult_gt.ipynb
 
-### data set creation (hdf5-file: .h5)
+#### data set creation (hdf5-file: .h5)
 Creates the data set as a single hdf5 file. The data must by prepared in order 
 to allow the script run smothly.
 * set input data directory containing the preprocessed data
@@ -45,17 +45,17 @@ directory: "xxx", tile number: "nnnnnn", file name: "tile_xxx_nnnnnn.tif"
 for example
 directory: "dtm", tile number: "122277", file name: "tile_dtm_122277.tif"
 
-### calculation of stats
+#### calculation of stats
 calculation of mean and standard deviation and addition to data set (.h5)
 
 
-## Create extended data set (fliped)
+### Create extended data set (fliped)
 dataset_flip.ipynb
 indices of train, validation and test sets must be prepared as numpy arrays (.npy)
 
 ###########################################################################
 
-# deep_learing
+## deep_learing
 the three folders contain the code for training and evaluation of the models.
 each of the folder has the same structure.
 
@@ -72,23 +72,23 @@ weights - for storing the trained weights (every epoch)
 train.ipynb - for training models
 test.ipynb - for testing models
 
-## execution
+### execution
 it is just necessary to run train.ipynb for training and test.ipynb for testing
 
 ###########################################################################
 
-# prediction
+## prediction
 for prediction of the necessity of thinnings. creation of verctor (.shp) data
 out of the predicted raster tiles from the DCNNs.
 
 the folder structure is the same as in # deep_learing
 
-## create predictions
+### create predictions
 predict_data_512.ipynb
 
 creates predictions as raster tiles.
 
-## create vector data
+### create vector data
 predict_data_rasterize.ipynb
 
 concatonates the tiles created by predict_data_512.ipynb and vectorises the data. 
