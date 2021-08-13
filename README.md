@@ -24,72 +24,72 @@ We apply deep convolutional neural networks for semantic sementation to detect t
 ```rm ~/Downloads/Miniconda3-latest-Linux-x86_64.sh```
 
 ## 3a. Create an environment for geo
-1. Update conda: `conda update conda`
+1. Update conda:
+  `conda update conda`
 1. Create the environment. Call it geo and install python 3 (*hence the name*):
-```conda create -n geo```
-1. Install packages: `conda install xxx`
-* numpy
-* geopandas
-* osgeo
-* h5py
+  ```conda create -n geo```
+1. Install packages:
+  `conda install xxx`
+  * numpy
+  * geopandas
+  * osgeo
+  * h5py
 
 ## 3b. Create an environment for pytorch
 1. Create the environment. Call it pytorch and install python 3 (*hence the name*):
-```conda create -n pytorch```
+  ```conda create -n pytorch```
 1. Install packages:
-`conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch`
-`conda install pandas`
-`conda install h5py`
+  `conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch`
+  `conda install pandas`
+  `conda install h5py`
 
 ***
 
-## create_dataset
+## 4. create_dataset
 data preperation and concatination into data set
 
-#### Create input data tiles
-- `prepare_data_ortho.ipynb`
-- `prepare_data_dsm.ipynb`
-- `prepare_data_dtm.ipynb`
-- `prepare_data_slope.ipynb`
+#### 4.1 Create input data tiles
+  1. - `prepare_data_ortho.ipynb`
+  1. - `prepare_data_dsm.ipynb`
+  1. - `prepare_data_dtm.ipynb`
+  1. - `prepare_data_slope.ipynb`
 
 preperation of the data for concationation into one data set (see Create data set).
 in particular the raster files are clipt into tiles defined by the vector file (.shp).
-in the case of dsm, dtm and slope the created files need to be aigned since they 
+in the case of dsm, dtm and slope the created files need to be aigned since they
 have diffrent spatial resolutions.
 
-#### Create ground truth tiles
-`create_ground_truth.ipynb`
+#### 4.2 Create ground truth tiles
+  1. `create_ground_truth.ipynb`
 
 Created ground truth raster files (.tif) out of a vector file (.shp)
 
 *add ground truth types* defines the ground truths for Base, UR12 and UR1 (see disertation).
 
-
-#### Create data set
-`create_dataset_mult_gt.ipynb`
+#### 4.3 Create data set
+  1. `create_dataset_mult_gt.ipynb`
 
 #### data set creation (hdf5-file: .h5)
-Creates the data set as a single hdf5 file. The data must by prepared in order 
+Creates the data set as a single hdf5 file. The data must by prepared in order
 to allow the script run smothly.
-* set input data directory containing the preprocessed data
-* inside this directoy the directories must have the exact names as defined in 
-the dictionary ´data_dict
-* all files in this dictonaries must have a specific prefix
+  * set input data directory containing the preprocessed data
+  * inside this directoy the directories must have the exact names as defined in the dictionary ´data_dict
+  * all files in this dictonaries must have a specific prefix
 
-directory: `xxx`, tile number: `nnnnnn`, file name: `tile_xxx_nnnnnn.tif`
+  directory: `xxx`, tile number: `nnnnnn`, file name: `tile_xxx_nnnnnn.tif`
 
-directory: `dtm`, tile number: `122277`, file name: `tile_dtm_122277.tif`
+  directory: `dtm`, tile number: `122277`, file name: `tile_dtm_122277.tif`
 
 *calculation of stats* calculation of mean and standard deviation and addition to data set (.h5)
 
 
-#### Create extended data set (fliped)
-`dataset_flip.ipynb`
+#### 4.4 Create extended data set (fliped) (optinal)
+  1.`dataset_flip.ipynb`
 indices of train, validation and test sets must be prepared as numpy arrays (.npy)
 
 ***
 
-## deep_learing
+## 5 deep_learing
 the three folders contain the code for training and evaluation of the models.
 each of the folder has the same structure.
 
@@ -125,4 +125,4 @@ creates predictions as raster tiles.
 #### create vector data
 `predict_data_rasterize.ipynb`
 
-concatonates the tiles created by `predict_data_512.ipynb` and vectorises the data. 
+concatonates the tiles created by `predict_data_512.ipynb` and vectorises the data.
