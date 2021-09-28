@@ -28,12 +28,17 @@ We apply deep convolutional neural networks for semantic sementation to detect t
   `conda update conda`
 1. Create the environment. Call it geo and install python 3 (*hence the name*):
   ```conda create -n geo```
+1. Activate enviroment:
+  `conda activate geo`
 1. Install packages:
-  `conda install xxx`
+  `conda install -c conda-forge gdal`
+  `conda install -c conda-forge geopandas`
   * numpy
-  * geopandas
-  * osgeo
   * h5py
+1. Create Jupyter kernel:
+  `python -m ipykernel install --user --name geo`
+1. Deactivate enviroment:
+  `conda deactivate`
 
 ## 3b. Create an environment for pytorch
 1. Create the environment. Call it pytorch and install python 3 (*hence the name*):
